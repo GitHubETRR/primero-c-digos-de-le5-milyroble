@@ -20,4 +20,4 @@ int main() {
     int resultado = sumarVector(numeros, tama);
     printf("La suma de los elementos es: %d\n", resultado);
     return 0;
-}
+} 
