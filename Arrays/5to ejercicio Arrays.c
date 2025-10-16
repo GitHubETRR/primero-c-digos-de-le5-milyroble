@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, A[10], B[10], prod = 0;
+    int n, i; A[n], B[n];
+    int prod = 0;
     printf("Tamaño de los vectores: ");
     scanf("%d", &n);
     printf("Elementos de A:\n");
