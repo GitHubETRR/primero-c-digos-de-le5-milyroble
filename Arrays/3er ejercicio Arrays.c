@@ -2,22 +2,21 @@
 
 int main() {
     int v[50];
-    int i, mayor, repite = 0;
+    int i, comparador, repite = 0;
 
     printf("Elegí 50 valores entre 10 y 20:\n");
     for(i = 0; i < 50; i++) {
         scanf("%d", &v[i]);
     }
-
-    mayor = v[0];
+    comparador = v[0];
     for(i = 1; i < 50; i++)
-        if(v[i] > mayor)
-            mayor = v[i];
-
+        if(v[i] > comparador)
+            comparador = v[i];
+            
     for(i = 0; i < 50; i++)
         if(v[i] == mayor)
             repite++;
 
-    printf("El mayor es %d y se repite %d veces.\n", mayor, repite);
+    printf("El mayor es %d. Se repite %d veces.\n", mayor, repite);
     return 0;
 }
