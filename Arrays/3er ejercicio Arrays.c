@@ -1,22 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define tamanio 50
 
 int main() {
-    int v[50];
-    int i, comparador, repite = 0;
+    int v[tamanio];
+    int i, mayor, repite = 0;
 
-    printf("Elegí 50 valores entre 10 y 20:\n");
-    for(i = 0; i < 50; i++) {
-        scanf("%d", &v[i]);
+    srand(time(NULL));
+
+    for(i = 0; i < tamanio; i++) {
+        v[i] = rand() % (20 - 10 + 1) + 10;
     }
-    comparador = v[0];
-    for(i = 1; i < 50; i++)
-        if(v[i] > comparador)
-            comparador = v[i];
-            
-    for(i = 0; i < 50; i++)
-        if(v[i] == mayor)
-            repite++;
 
-    printf("El mayor es %d. Se repite %d veces.\n", mayor, repite);
+    printf("\nVALORES DEL VECTOR:\n\n");
+    for(i = 0; i < tamanio; i++) {
+        printf("v[%d] = %d\n", i, v[i]);
+    }
+    mayor = v[0];
+    for(i = 1; i < tamanio; i++) {
+        if(v[i] > mayor) {
+            mayor = v[i];
+        }
+    }
+    for(i = 0; i < tamanio; i++) {
+        if(v[i] == mayor) {
+            repite++;
+        }
+    }
+    printf("\nEl mayor es %d. Se repite %d veces.\n", mayor, repite);
     return 0;
 }
